@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Function :- block of code, used or defined to perform specific 
+        //Types of function
+        // normal function :- with para, without para and with default
+
+        // normal function without parameter 
+        function demo(text){
+            console.log("Hello " + text);
+        }
+        demo(); // function calling 
+        // with parameters
+        function demo1(text){
+            console.log("Hello " + text);
+        }
+        demo1 ("React");
+        // default parameters
+        function add(a,b=10){
+            console.log((a+b));
+        }
+        add(123);
+
+        // synchronous function :- code is executed line by line, one by one
+        function cal(){
+            function add(a,b){
+                console.log("Addition is " + (a+b));
+            }
+            function mul(x,y){
+                console.log("Multiplication is " + (x*y));
+            }
+            function sub(a,b){
+                console.log("Subtraction is " + (a-b));
+            }
+            mul(10,20);
+            add(10,20);
+            sub(20,10);
+        }
+        cal();
+        // Anonymous function is a function that does not have a name. 
+        // It is often used as a callback function or assigned to a variable. Here is an example of an anonymous function:
+        // msg();
+        // short code 
+
+        // Promises:- it handles asynchronous operations in JavaScript. It represents a value that 
+        // may be available now, in the future, or never. A promise can be in one of three states: pending, fulfilled, or rejected. Here is an example of a promise:
+
+        let mypromise = new Promise(function(resolve, reject) {
+            let age = 25;
+            if (age >= 18) {
+                resolve("Success: The person is eligible to vote.");
+            } else {
+                reject("Error: The person is not eligible to vote.");
+            }
+        });
+        mypromise 
+        .then(msg => console.log(msg))
+        .catch(err => console.log(err));
+        console.log(mypromise);
+        async function userInfo(){
+            try {   
+            let userData = await fetch("https://jsonplaceholder.typicode.com/users/1");
+            let user = await userData.json();
+            console.log(Response);
+        }
+ // try end
+    catch (error) {
+        console.log(error);
+    }
+    // catch end
+    // function end
+    userInfo();
+    }
+    // map() : creates a new array by applying a functon to each element of the original array. Here is an example of using the map() method:
+    let num = [1, 2, 3, 4, 5];
+    // map
+    let square = num.map(n=> n*n);
+    console.log(square);
+    // reduce
+    let sum = num.reduce((total,n) => total + n, 0);
+    console.log(sum);
+    // filter
+    let sorting = num.filter(n=> n>2);
+    console.log(sorting);
+    // for each
+    num.forEach(n => console.log(n*2));
+    // Local storage :- it is a web storage API that allows you to store data in the browser.
+    //  It provides a way to store key-value pairs in a web browser with no expiration date.
+    //  Here is an example of using local storage:
+    let myInfo = {
+        name: "John",
+        age: 30,
+        mob: "1234567890",
+        email: "john@gnail.com"
+
+    };
+    // store the object by converting it to a JSON string   
+    localStorage.setItem("userInfo", JSON.stringify(myInfo));
+    
+    </script>
+</body>
+</html>
